@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 日历单元格布局 -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardDay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#80FFFFFF"
+    app:strokeWidth="0dp"
+    app:strokeColor="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="6dp"
+        android:minHeight="64dp"
+        android:gravity="center_horizontal">
+
+        <!-- 日期行 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                tools:text="15" />
+
+            <!-- 今日标记（绿色圆点） -->
+            <View
+                android:id="@+id/viewTodayDot"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/circle_dot"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <!-- 功过标签区域 -->
+        <LinearLayout
+            android:id="@+id/layoutScores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="3dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <!-- 功标签 -->
+            <TextView
+                android:id="@+id/tvMerit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="2dp"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:background="@drawable/merit_badge_bg"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="功+3" />
+
+            <!-- 过标签 -->
+            <TextView
+                android:id="@+id/tvDemerit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="2dp"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:textColor="@color/error_red"
+                android:background="@drawable/demerit_badge_bg"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="过-2" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background"
+    tools:context=".SplashActivity">
+
+    <!-- 装饰性背景元素 -->
+    <!-- 左上角圆形 -->
+    <View
+        android:id="@+id/decorationCircleTopLeft"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="-100dp"
+        android:background="@drawable/circle_decoration"
+        android:alpha="0.1" />
+
+    <!-- 右下角圆形 -->
+    <View
+        android:id="@+id/decorationCircleBottomRight"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginBottom="-100dp"
+        android:background="@drawable/circle_decoration"
+        android:alpha="0.08" />
+
+    <!-- 中间小圆形 -->
+    <View
+        android:id="@+id/decorationCircleMiddle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/circle_decoration"
+        android:alpha="0.06" />
+
+    <!-- 主要内容容器 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="40dp">
+
+        <!-- 中心内容区域 -->
+        <LinearLayout
+            android:id="@+id/centerContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Logo 容器 - 圆形边框 + 内圆 + 叶子图标 -->
+            <FrameLayout
+                android:id="@+id/logoContainer"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- 外层圆环 -->
+                <View
+                    android:id="@+id/outerCircle"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_border" />
+
+                <!-- 内层圆形背景 -->
+                <View
+                    android:id="@+id/innerCircle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_inner" />
+
+                <!-- 叶子图标 -->
+                <ImageView
+                    android:id="@+id/leafIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_leaf" />
+            </FrameLayout>
+
+            <!-- 应用名称和 Slogan -->
+            <LinearLayout
+                android:id="@+id/textContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- 应用名称 -->
+                <TextView
+                    android:id="@+id/appName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/text_white_primary"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05" />
+
+                <!-- Slogan -->
+                <TextView
+                    android:id="@+id/appSlogan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/app_slogan"
+                    android:textColor="@color/text_white_90"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 底部版本信息 -->
+        <LinearLayout
+            android:id="@+id/versionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_version"
+                android:textColor="@color/text_white_70"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/app_copyright"
+                android:textColor="@color/text_white_60"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
+

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.HomeFragment">
+
+    <!-- 主内容区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 顶部标签栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:elevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:gravity="center_vertical">
+
+                <!-- 左侧消息按钮 -->
+                <FrameLayout
+                    android:id="@+id/btnMessages"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_message"
+                        android:contentDescription="消息"
+                        app:tint="@color/text_primary" />
+
+                    <!-- 未读消息红点 -->
+                    <View
+                        android:id="@+id/unreadDot"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/red_dot"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!-- 中间标签栏 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- 关注标签 -->
+                    <LinearLayout
+                        android:id="@+id/tabFollowing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingHorizontal="14dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:id="@+id/tvFollowing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关注"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <View
+                            android:id="@+id/indicatorFollowing"
+                            android:layout_width="16dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@android:color/transparent" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="28dp"
+                        android:layout_height="1dp" />
+
+                    <!-- 推荐标签 -->
+                    <LinearLayout
+                        android:id="@+id/tabRecommended"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingHorizontal="14dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:id="@+id/tvRecommended"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="推荐"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/indicatorRecommended"
+                            android:layout_width="16dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/green_primary" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="28dp"
+                        android:layout_height="1dp" />
+
+                    <!-- 同城标签 -->
+                    <LinearLayout
+                        android:id="@+id/tabNearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingHorizontal="14dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:id="@+id/tvNearby"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="同城"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <View
+                            android:id="@+id/indicatorNearby"
+                            android:layout_width="16dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@android:color/transparent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!-- 右侧搜索按钮 -->
+                <ImageView
+                    android:id="@+id/btnSearch"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="搜索"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/text_primary" />
+            </LinearLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider" />
+        </LinearLayout>
+
+        <!-- ViewPager2 用于滑动切换标签内容 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- 浮动发布按钮 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="发布"
+        app:tint="@color/white"
+        app:backgroundTint="@color/green_primary"
+        app:elevation="8dp"
+        app:borderWidth="0dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

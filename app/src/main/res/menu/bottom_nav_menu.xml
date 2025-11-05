@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:title="首页" />
+    
+    <item
+        android:id="@+id/navigation_record"
+        android:title="记录" />
+    
+    <item
+        android:id="@+id/navigation_ask"
+        android:title="问一问" />
+    
+    <item
+        android:id="@+id/navigation_library"
+        android:title="书斋" />
+    
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="我的" />
+</menu>
+

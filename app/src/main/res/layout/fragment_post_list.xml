@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 帖子列表页面 - 用于 ViewPager2 的每个标签页 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 下拉刷新 -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 帖子列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPosts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clipToPadding="false" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- 加载状态 -->
+    <include
+        android:id="@+id/layoutLoading"
+        layout="@layout/layout_loading"
+        android:visibility="gone" />
+
+    <!-- 空状态 -->
+    <include
+        android:id="@+id/layoutEmpty"
+        layout="@layout/layout_empty"
+        android:visibility="gone" />
+
+</FrameLayout>
+
